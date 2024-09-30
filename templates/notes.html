@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}
+stikywall
+{% endblock%}
+<style>
+    .container{
+       display:flex;
+       flex-wrap: wrap;
+    }
+    .card-body{
+        width:200px;
+        margin: 10px;
+        padding:10px;
+        border-radius:5px;
+        box-shadow:0 0 10px rgba(0,0,0,0.1);
+        text-align:center;
+        cursor:pointer;
+        transition: box-shadow 0.3s ease-in-out;
+        background-color:#f0f0f0;
+    }
+</style>
+
+{% block content %}
+     
+
+    {% comment %} <div class='todo-header'>
+        <h1>To-Do Pluse</h1>
+    </div> {% endcomment %}
+    <div class='m-2'>
+        <h1>Stiky Wall</h1>
+    </div>
+    <div class='container'>
+        {% for n in note %}
+        <div class=' card task-card'>
+            <div class='d-flex'>
+
+                <div class='card-body'>
+                    <h3 class='card-title'>{{ n.title }}</h3>
+                    <p class='card-text'>{{ n.content }}</p>
+                    <a href="{% url 'delete_note' n.id%}" class='btn btn-outline-primary btn-sm'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                        </svg>
+                    </a>
+
+                    {% comment %} <button type='button' class='btn btn-primary w-100 delete-note-btn' onclick="location.href='{% url 'delete_note' %}' ">Delete</button> {% endcomment %}
+
+
+                </div>
+
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>   
+        
+     
+    <div class='btn'>
+        <button type='button' class='btn btn-primary w-100 add-note-btn' onclick="location.href='{% url 'add_note'%}'">Add notes</button>
+    </div>
+    
+
+    
+    
+        
+    
+
+
+
+
+        
+          
+   
+    
+    
+{% endblock %}
+

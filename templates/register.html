@@ -1,0 +1,84 @@
+{% extends 'base.html'%}
+{% block title%}
+Registeration page
+{% endblock %}
+                
+        
+                html{
+                        display:flex;
+                        flex-direction:column;
+                        height:75vh;
+                        justify-content:center;
+                        align-items:center;
+                        text-align:center;
+            
+                      }
+                body{
+                        background-color:#f0f4ff;
+                        font-family: Arial, sans-serif;
+                      }
+                     .todo-container {
+                          max-width:400px;
+                          margin: 
+                          
+                           auto;
+                          padding:20px;
+                          background-color:white;
+                          border-radius:5px;
+                          box-shadow:0 0 10px rgba(0,0,0,0.1);
+                      }
+                      .todo-header{
+                        background-color:#b082ff;
+                        color:white ;
+                        padding:20px;
+                        text-align:center;
+                        border-radius:8px 8px 0 0;
+                      }
+                      .btn-primary{
+                        background-color:#b082ff;
+                        border-color:#b082ff;
+                        cursor:pointer;
+                      }
+{%block content%}
+                <div class='todo-container'>
+                        <div class='todo-header'>
+                                <h1>To-Do Pluse</h1>
+                                
+                        </div>
+                        <div class='mt-3'>
+                                <h5>Get Things Done with Our To-Do pluse</h5>
+                                <p>Boost your Productivity with To-do pluse</p>
+                        </div>
+                        <div class='sign-form mt-5'>
+                                <form method='post'>
+                                {% csrf_token %}
+                                    <input type='text' id='username' placeholder='Username' class='form-control' required name='username'>
+                                    <input type='password' id='password' placeholder='Password' class='form-control mt-3 mb-3' required name='password'>
+                                    <input type='submit' value='Sign Up' onclick="location.href='{% url 'index'%}'" class='btn btn-primary w-100'>
+                                    {% comment %} <button type='submit' onclick="location.href='{% url 'index'%}'" class='btn btn-primary w-100'>Sign In</button> {% endcomment %}
+                                    
+                                    
+                                </form>
+                                
+                        </div>
+        
+                
+        
+        
+                </div>
+{%endblock%}
+
+
+
+     
+        
+
+
+
+       
+          
+   
+    
+    
+
+

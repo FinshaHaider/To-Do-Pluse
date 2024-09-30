@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}
+Task{% endblock%}
+
+{% block content %}
+     <h1 class='m-5'>To-Do Pluse</h1>
+     <div class='task'>
+        
+            {% for task in task%}
+            <div class="card mb-2" style="width: 18rem;">
+            <div class="card-body">
+              <ul>
+                
+                <li>{{ task.task }}</li>
+                  
+                
+                {% comment %} <input type="checkbox" class="card-subtitle" {% if task.completed %} c {% endif %}> {% endcomment %}
+                <button type="button" class="btn btn-outline-danger btn-sm float-end" onclick="location.href='{% url 'delete_task' task.id %}'">completed</button>
+                <small class="text-muted">{{ task.deadline }}</small>
+                   
+              </ul>
+              
+              
+            </div>
+        </div>
+            {% endfor %}
+           
+          
+   
+    
+    
+{% endblock %}
+
+<script>
+    
+</script>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+Add task
+{% endblock%}
+
+{% block content%}
+
+    <div class='todo-container'>
+     <h1 class=' text-center'>Add new task</h1>
+     {% comment %} <div class='task'>
+        <form action="{% url 'addtask'%}"  method='post'>
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- creates a form with all fields from the form object -->
+            {% comment %} <input type='text' id='taskInput' placeholder='enter a new task'> 
+            <button type='submit'>Add Task</button>
+        </form>   
+        
+    
+     <hr> {% endcomment %}
+        <form method='post'>
+            {% csrf_token %}
+            <div class='mb-3'>
+                <label for='task' class='form-label'>Task</label>
+                <input type='text' name='task' placeholder='enter your task' class='form-control'>
+            </div>
+
+            <button type='submit' class='btn btn-primary w-100' onclick="location.href='{% url 'add_todo' %}'">Add Task</button>
+            <a href="{% url 'personal' %}" class='btn btn-secondary w-100 mt-2'> back to todo list</a>
+        </form> 
+    </div>
+        
+      
+    
+    
+{% endblock %}

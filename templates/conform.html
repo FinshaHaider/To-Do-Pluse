@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>LogOut</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <style>
+        html{
+                display:flex;
+                flex-direction:column;
+                height:100vh;
+                justify-content:center;
+                align-items:center;
+                text-align:center;
+    
+                                       
+              }
+        body{
+                background-color:#f0f4ff;
+                font-family: Arial, sans-serif;
+              }
+        .todo-container {
+                text-align:center;
+                  
+                  margin:auto;
+                  padding:20px;
+                  background-color:white;
+                  border-radius:5px;
+                  box-shadow:0 0 10px rgba(0,0,0,0.1);
+              }
+        .todo-header{
+                background-color:#b082ff;
+                color:white ;
+                padding:20px;
+                text-align:center;
+                border-radius:8px 8px 0 0;
+              }
+              .primary{
+                background-color:#b082ff;
+                color:white;
+                text-decoration:none;
+                font-weight:bold;
+              }
+        .btn-primary{
+                background-color:#b082ff;
+                border-color:#b082ff;
+                cursor:pointer;
+              }
+</style>
+    <body>
+        <div class='todo-container'>
+
+            
+            <p>Are you sure you want to log out?</p>
+
+            <a href="{% url 'logout' %}" class='nav-link btn btn-primary'>Yes</a>
+            <a href="{% url 'home' %}" class='nav-link btn btn-primary'>No</a>
+
+            
+        </div>
+        
+        
+        <script src="" async defer></script>
+    </body>
+</html>
+
+ 
+
+
+
+
