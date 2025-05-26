@@ -1,4 +1,5 @@
-
+# users name : todopluse
+# password : todopluse
 from django.contrib import admin
 from .models import Tasks,Todo,Users,Notes
 # Register your models here.
